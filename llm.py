@@ -14,5 +14,3 @@ llm = ChatGroq(
 embeddings = HuggingFaceEmbeddings(
     model_name="intfloat/multilingual-e5-base"
 )
-
-print("👉 API Key:", os.getenv("LLAMA_API_KEY"))
