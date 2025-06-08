@@ -1,0 +1,26 @@
+# Core LangChain components
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langchain-huggingface
+
+# LLMs and embeddings
+huggingface-hub>=0.23.5
+sentence-transformers>=3.0.1
+transformers>=4.42.4
+pydantic>=2.8.2
+
+# Vector store
+faiss-cpu>=1.7.4
+
+# Web scraping
+beautifulsoup4>=4.12.3
+requests>=2.32.3
+html5lib>=1.1
+
+# Streamlit app
+streamlit>=1.35.0
+
+# Optional .env support (if needed)
+python-dotenv>=1.0.0

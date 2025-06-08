@@ -1,14 +1,18 @@
 import os
 import streamlit as st
-from llama_index.llms.groq import Groq
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from langchain_groq import ChatGroq
+from langchain_huggingface  import HuggingFaceEmbeddings
 
-# Set the Groq API key securely
 os.environ["LLAMA_API_KEY"] = st.secrets["LLAMA_API_KEY"]
 
-# Load LLAMA3 model from Groq
-llm = ChatGroq(model="llama3-70b-8192", api_key=os.getenv("LLAMA_API_KEY"))
+llm = ChatGroq(
+    model_name="Llama3-70B-8192",  # Make sure this model is supported
+    api_key=os.getenv("LLAMA_API_KEY"),
+    temperature=0.2,  # Lower temp for more factual responses
+)
 
-# HuggingFace embeddings for FAISS
-embeddings = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(
+    model_name="intfloat/multilingual-e5-base"
+)
+
+print("👉 API Key:", os.getenv("LLAMA_API_KEY"))
